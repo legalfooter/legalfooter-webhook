@@ -1,0 +1,10 @@
+{
+  "name": "legalfooter-webhook",
+  "version": "1.0.0",
+  "main": "api/stripe-webhook.js",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.42.3",
+    "stripe": "^13.0.0",
+    "micro": "^9.3.4"
+  }
+}

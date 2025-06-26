@@ -26,7 +26,7 @@ export default async function handler(req, res) {
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object;
     const email = session.customer_details?.email;
-    const domain = session.custom_fields?.find(f => f.key === 'protected_domain')?.text?.value;
+    const domain = session.custom_fields?.find(f => f.key === 'protecteddomain')?.text?.value;
 
     const { error } = await supabase.from('legalfooter_policies').insert([
       {

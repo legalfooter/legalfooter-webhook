@@ -1,6 +1,7 @@
 import { buffer } from 'micro';
 import Stripe from 'stripe';
 import { createClient } from '@supabase/supabase-js';
+import { Resend } from 'resend';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
@@ -40,6 +41,22 @@ export default async function handler(req, res) {
     if (error) {
       console.error('Supabase insert error:', error.message);
     }
+
+  // Send confirmation email via Resend
+    await resend.emails.send({
+      from: 'LegalFooter <onboarding@resend.dev>',
+      to: email,
+      subject: 'Your LegalFooter Policy is Active',
+      html: `
+        <h2>Welcome to LegalFooter</h2>
+        <p>Thank you for protecting your website.</p>
+        <ul>
+          <li><strong>Domain:</strong> ${domain}</li>
+          <li><strong>Policy Number:</strong> LFP-${policyId}</li>
+        </ul>
+        <p>If you have any questions, just reply to this email.</p>
+      `,
+    });
   }
 
   res.status(200).json({ received: true });

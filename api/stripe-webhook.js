@@ -57,11 +57,16 @@ export default async function handler(req, res) {
           to: [email],
           subject: 'Your LegalFooter Policy is Active',
           html: `
-            <h1>Welcome to LegalFooter</h1>
-            <p><strong>Policy Number:</strong> ${uuid}</p>
-            <p><strong>Protected Domain:</strong> ${domain}</p>
-            <p>Thank you for securing your business with us. Your protection is now active.</p>
-          `
+  <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; border: 1px solid #eee; border-radius: 8px;">
+    <h1 style="color: #007BFF;">Your LegalFooter Policy</h1>
+    <p style="font-size: 16px;">Thanks for signing up! Your protection is now active.</p>
+    <hr style="margin: 20px 0;" />
+    <p><strong>Policy Number:</strong> <span style="color: #555;">${uuid}</span></p>
+    <p><strong>Protected Domain:</strong> <span style="color: #555;">${domain}</span></p>
+    <hr style="margin: 20px 0;" />
+    <p style="font-size: 14px; color: #999;">Questions? Just reply to this email or visit our support center.</p>
+  </div>
+`
         });
 
         console.log('✅ Resend email response:', emailResponse);

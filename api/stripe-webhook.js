@@ -49,14 +49,18 @@ export default async function handler(req, res) {
     } else {
       console.log('✅ Email about to be sent to:', email);
 
+      const uuid = data?.id;
+
       try {
         const emailResponse = await resend.emails.send({
           from: 'LegalFooter <onboarding@resend.dev>',
           to: [email],
           subject: 'Your LegalFooter Policy is Active',
           html: `
-            <h1>Thanks for signing up!</h1>
-            <p>This is a test email to confirm delivery is working.</p>
+            <h1>Welcome to LegalFooter</h1>
+            <p><strong>Policy Number:</strong> ${uuid}</p>
+            <p><strong>Protected Domain:</strong> ${domain}</p>
+            <p>Thank you for securing your business with us. Your protection is now active.</p>
           `
         });
 

@@ -5,6 +5,7 @@ import { Resend } from 'resend';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export const config = {
   api: {
@@ -28,35 +29,37 @@ export default async function handler(req, res) {
     const session = event.data.object;
     const email = session.customer_details?.email;
     const domain = session.custom_fields?.find(f => f.key === 'protecteddomain')?.text?.value;
+    const policy_id = session.id;
 
     const { error } = await supabase.from('legalfooter_policies').insert([
       {
         email,
         domain,
         stripe_customer_id: session.customer,
-        policy_id: session.id,
+        policy_id,
       }
     ]);
 
     if (error) {
       console.error('Supabase insert error:', error.message);
-    }
+    } else {
+      console.log('✅ Email about to be sent to:', email);
 
-  // Send confirmation email via Resend
-    await resend.emails.send({
-      from: 'LegalFooter <onboarding@resend.dev>',
-      to: email,
-      subject: 'Your LegalFooter Policy is Active',
-      html: `
-        <h2>Welcome to LegalFooter</h2>
-        <p>Thank you for protecting your website.</p>
-        <ul>
-          <li><strong>Domain:</strong> ${domain}</li>
-          <li><strong>Policy Number:</strong> LFP-${policyId}</li>
-        </ul>
-        <p>If you have any questions, just reply to this email.</p>
-      `,
-    });
+      try {
+        await resend.emails.send({
+          from: 'LegalFooter <onboarding@resend.dev>',
+          to: email,
+          subject: 'Your LegalFooter Policy',
+          html: `
+            <h1>Welcome to LegalFooter</h1>
+            <p><strong>Policy Number:</strong> ${policy_id}</p>
+            <p><strong>Protected Domain:</strong> ${domain}</p>
+          `
+        });
+      } catch (emailErr) {
+        console.error('Email sending error:', emailErr);
+      }
+    }
   }
 
   res.status(200).json({ received: true });

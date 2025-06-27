@@ -5,6 +5,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.42.3",
     "stripe": "^13.0.0",
-    "micro": "^9.3.4"
+    "micro": "^9.3.4",
+    "resend": "^1.2.0"
   }
 }

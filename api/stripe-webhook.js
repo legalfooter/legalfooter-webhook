@@ -31,14 +31,18 @@ export default async function handler(req, res) {
     const domain = session.custom_fields?.find(f => f.key === 'protecteddomain')?.text?.value;
     const policy_id = session.id;
 
-    const { error } = await supabase.from('legalfooter_policies').insert([
-      {
-        email,
-        domain,
-        stripe_customer_id: session.customer,
-        policy_id,
-      }
-    ]);
+    const { data, error } = await supabase
+      .from('legalfooter_policies')
+      .insert([
+        {
+          email,
+          domain,
+          stripe_customer_id: session.customer,
+          policy_id,
+        }
+      ])
+      .select()
+      .single();
 
     if (error) {
       console.error('Supabase insert error:', error.message);
@@ -46,18 +50,19 @@ export default async function handler(req, res) {
       console.log('✅ Email about to be sent to:', email);
 
       try {
-        await resend.emails.send({
+        const emailResponse = await resend.emails.send({
           from: 'LegalFooter <onboarding@resend.dev>',
-          to: email,
-          subject: 'Your LegalFooter Policy',
+          to: [email],
+          subject: 'Your LegalFooter Policy is Active',
           html: `
-            <h1>Welcome to LegalFooter</h1>
-            <p><strong>Policy Number:</strong> ${policy_id}</p>
-            <p><strong>Protected Domain:</strong> ${domain}</p>
+            <h1>Thanks for signing up!</h1>
+            <p>This is a test email to confirm delivery is working.</p>
           `
         });
+
+        console.log('✅ Resend email response:', emailResponse);
       } catch (emailErr) {
-        console.error('Email sending error:', emailErr);
+        console.error('❌ Email sending error:', emailErr);
       }
     }
   }

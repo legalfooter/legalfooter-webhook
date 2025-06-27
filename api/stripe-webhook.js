@@ -63,8 +63,8 @@ html: `
     <p style="font-size: 16px;">Your website is now live with a LegalFooter—if you receive an ADA demand letter, submit it using the form below within 10 days.</p>
     <a href="https://yourdomain.com/submit-claim" style="display: inline-block; background-color: #005bbd; color: white; text-decoration: none; padding: 12px 20px; border-radius: 5px; font-weight: bold; margin: 20px 0 10px 0;">Submit Claim</a>
     <hr style="margin: 20px 0;" />
-    <p><strong>Policy Number:</strong> <span style="color: #555;">\${uuid}</span></p>
-    <p><strong>Protected Domain:</strong> <span style="color: #555;">\${domain}</span></p>
+    <p><strong>Policy Number:</strong> <span style="color: #555;">${uuid}</span></p>
+    <p><strong>Protected Domain:</strong> <span style="color: #555;">${domain}</span></p>
     <hr style="margin: 20px 0;" />
     <p style="font-size: 14px; color: #999;">Questions? Just reply to this email or visit our support center.</p>
   </div>

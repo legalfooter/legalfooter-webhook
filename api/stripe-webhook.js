@@ -55,18 +55,41 @@ export default async function handler(req, res) {
         const emailResponse = await resend.emails.send({
           from: 'LegalFooter <donotreply@legalfooter.com>',
           to: [email],
-          subject: 'Your LegalFooter Policy is Active',
+          subject: '🔒 Your website is protected with a LegalFooter.',
 html: `
-  <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; border: 1px solid #eee; border-radius: 8px;">
-    <img src="https://framerusercontent.com/images/MHBbgdrBWWQlb1fEzcwul4yrk.png" alt="LegalFooter Logo" style="max-width: 150px; display: block; margin: 0 0 20px 0;" />
-    <h1 style="color: #007BFF;">Website Protection Activated.</h1>
-    <p style="font-size: 16px;">Your website is now live with a LegalFooter—if you receive an ADA demand letter, submit it using the form below within 10 days.</p>
-    <a href="https://yourdomain.com/submit-claim" style="display: inline-block; background-color: #005bbd; color: white; text-decoration: none; padding: 12px 20px; border-radius: 5px; font-weight: bold; margin: 20px 0 10px 0;">Submit Claim</a>
-    <hr style="margin: 20px 0;" />
-    <p><strong>Policy Number:</strong> <span style="color: #555;">${uuid}</span></p>
-    <p><strong>Protected Domain:</strong> <span style="color: #555;">${domain}</span></p>
-    <hr style="margin: 20px 0;" />
-    <p style="font-size: 14px; color: #999;">Questions? Just reply to this email or visit our support center.</p>
+  <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 30px 0;">
+    <div style="max-width: 600px; margin: auto; background: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
+      <img src="https://framerusercontent.com/images/MHBbgdrBWWQlb1fEzcwul4yrk.png" alt="LegalFooter Logo" style="max-width: 150px; display: block; margin: 0 0 20px 0;" />
+
+      <h1 style="color: #005bbd; text-align: left;">Your LegalFooter Policy is Active</h1>
+      
+      <p style="font-size: 16px; color: #333; text-align: left;">Welcome! Your website is now protected by LegalFooter. Here's everything you need to know:</p>
+
+      <div style="font-size: 15px; color: #333; margin: 20px 0;">
+        <p><strong>Policy Number:</strong> ${uuid}</p>
+        <p><strong>Protected Domain:</strong> ${domain}</p>
+        <p><strong>Plan Coverage:</strong> Up to $20,000 in legal response and ADA remediation if you receive a qualifying demand letter.</p>
+        <p><strong>What's Included:</strong><br />
+        – Legal response drafted by ADA-specialized attorney<br />
+        – ADA developer fixes using WCAG 2.2 guidelines<br />
+        – Up to $20,000 in eligible legal or remediation costs</p>
+      </div>
+
+      <a href="https://calendly.com/legalfooter-support/30min" style="display: block; width: 100%; text-align: center; background-color: #005bbd; color: white; padding: 14px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; margin: 25px 0;">Submit a Claim</a>
+
+      <p style="font-size: 14px; color: #777; margin: 30px 0 0;">🕐 <strong>Important:</strong> You must submit your ADA demand letter within <strong>10 days</strong> of receipt to remain eligible for coverage.</p>
+
+      <hr style="margin: 30px 0;" />
+
+      <p style="font-size: 13px; color: #888;">
+        💬 Have questions? Contact our support team at <a href="mailto:support@legalfooter.com" style="color: #888; text-decoration: underline;">support@legalfooter.com</a>
+      </p>
+
+      <p style="font-size: 13px; color: #888; text-align: center; margin-top: 40px;">
+        <a href="https://docs.google.com/document/d/1gG2cnLJLm4EWd2PukNamQloRv3WKfkUEhN2ksVYuEoY/edit?usp=sharing" style="color: #888; text-decoration: underline;">Privacy Policy</a> &nbsp;|&nbsp;
+        <a href="https://docs.google.com/document/d/1e-g4BL-KR1N9iDHII0hZcU9EXST2VxM7bHETD4w9gG8/edit?usp=sharing" style="color: #888; text-decoration: underline;">Terms of Service</a>
+      </p>
+    </div>
   </div>
 `
         });

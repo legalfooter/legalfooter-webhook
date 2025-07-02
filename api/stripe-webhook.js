@@ -53,7 +53,7 @@ export default async function handler(req, res) {
 
       try {
         const emailResponse = await resend.emails.send({
-          from: 'LegalFooter <onboarding@resend.dev>',
+          from: 'LegalFooter <donotreply@legalfooter.com>',
           to: [email],
           subject: 'Your LegalFooter Policy is Active',
 html: `

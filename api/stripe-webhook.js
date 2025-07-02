@@ -14,12 +14,20 @@ export const config = {
 };
 
 export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).send('Method Not Allowed');
+  }
+
   const sig = req.headers['stripe-signature'];
-  const buf = await buffer(req);
 
   let event;
   try {
-    event = stripe.webhooks.constructEvent(buf, sig, process.env.STRIPE_WEBHOOK_SECRET);
+    const buf = await buffer(req);
+    event = stripe.webhooks.constructEvent(
+      buf,
+      sig,
+      process.env.STRIPE_WEBHOOK_SECRET
+    );
   } catch (err) {
     console.error('Webhook error:', err.message);
     return res.status(400).send(`Webhook Error: ${err.message}`);

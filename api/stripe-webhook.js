@@ -76,14 +76,14 @@ html: `
       <div style="font-size: 15px; color: #333; margin: 20px 0;">
         <p><strong>Policy Number:</strong> ${uuid}</p>
         <p><strong>Protected Domain:</strong> ${domain}</p>
-        <p><strong>Plan Coverage:</strong> Up to $20,000 in legal response and ADA remediation if you receive a qualifying demand letter.</p>
+        <p><strong>Plan Coverage:</strong> Up to $10,000 in legal response and ADA remediation if you receive a qualifying demand letter.</p>
         <p><strong>What's Included:</strong><br />
         – Legal response drafted by ADA-specialized attorney<br />
         – ADA developer fixes using WCAG 2.2 guidelines<br />
-        – Up to $20,000 in eligible legal or remediation costs</p>
+        – Up to $10,000 in eligible legal or remediation costs</p>
       </div>
 
-      <a href="https://calendly.com/legalfooter-support/30min" style="display: block; width: 100%; text-align: center; background-color: #005bbd; color: white; padding: 14px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; margin: 25px 0;">Submit a Claim</a>
+      <a href="https://calendly.com/legalfooter-support/30min" style="display: block; width: 100%; text-align: center; background-color: #005bbd; color: white; padding: 14px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; margin: 25px 0;">Submit Demand Letter</a>
 
       <p style="font-size: 14px; color: #777; margin: 30px 0 0;">🕐 <strong>Important:</strong> You must submit your ADA demand letter within <strong>10 days</strong> of receipt to remain eligible for coverage.</p>
 

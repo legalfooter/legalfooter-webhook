@@ -69,7 +69,7 @@ html: `
     <div style="max-width: 600px; margin: auto; background: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
       <img src="https://framerusercontent.com/images/MHBbgdrBWWQlb1fEzcwul4yrk.png" alt="LegalFooter Logo" style="max-width: 150px; display: block; margin: 0 0 20px 0;" />
 
-      <h1 style="color: #005bbd; text-align: left;">Your LegalFooter Protection is Active</h1>
+      <h1 style="color: #005bbd; text-align: left;">Your LegalFooter Protection is Active.</h1>
       
       <p style="font-size: 16px; color: #333; text-align: left;">Welcome! Your website is now protected by LegalFooter. Here's everything you need to know:</p>
 

@@ -71,7 +71,7 @@ html: `
 
       <h1 style="color: #005bbd; text-align: left;">Your LegalFooter Support is Active.</h1>
       
-      <p style="font-size: 16px; color: #333; text-align: left;">Your website is now protected with an active LegalFooter ADA Website Support Plan™.</p>
+      <p style="font-size: 16px; color: #333; text-align: left;">Your LegalFooter ADA Website Support Plan™ is now active.</p>
 
       <div style="font-size: 15px; color: #333; margin: 20px 0;">
         <p><strong>Plan ID:</strong> ${uuid}</p>
@@ -80,7 +80,7 @@ html: `
         <p><strong>What's Included:</strong><br />
         – Legal response drafted by ADA-specialized attorney<br />
         – ADA developer fixes using WCAG 2.2 guidelines<br />
-        – Access to a team of professionals to protect your business from legal action</p>
+        – Access to experts to reduce risk of legal escalation</p>
       </div>
 
       <a href="https://calendly.com/legalfooter-support/30min" style="display: block; width: 100%; text-align: center; background-color: #005bbd; color: white; padding: 14px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; margin: 25px 0;">Submit Demand Letter</a>

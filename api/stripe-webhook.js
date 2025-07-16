@@ -69,18 +69,18 @@ html: `
     <div style="max-width: 600px; margin: auto; background: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
       <img src="https://framerusercontent.com/images/MHBbgdrBWWQlb1fEzcwul4yrk.png" alt="LegalFooter Logo" style="max-width: 150px; display: block; margin: 0 0 20px 0;" />
 
-      <h1 style="color: #005bbd; text-align: left;">Your LegalFooter Protection is Active.</h1>
+      <h1 style="color: #005bbd; text-align: left;">Your LegalFooter Support is Active.</h1>
       
-      <p style="font-size: 16px; color: #333; text-align: left;">Welcome! Your website is now protected by LegalFooter. Here's everything you need to know:</p>
+      <p style="font-size: 16px; color: #333; text-align: left;">Your website is now protected with an active LegalFooter ADA Website Support Plan™.</p>
 
       <div style="font-size: 15px; color: #333; margin: 20px 0;">
-        <p><strong>Policy Number:</strong> ${uuid}</p>
-        <p><strong>Protected Domain:</strong> ${domain}</p>
-        <p><strong>Plan Coverage:</strong> Up to $10,000 in legal response and ADA remediation if you receive a qualifying demand letter.</p>
+        <p><strong>Plan ID:</strong> ${uuid}</p>
+        <p><strong>Protected URL:</strong> ${domain}</p>
+        <p><strong>Plan Details:</strong> Each plan includes legal response and website fixes if you receive an ADA demand letter during your coverage period.</p>
         <p><strong>What's Included:</strong><br />
         – Legal response drafted by ADA-specialized attorney<br />
         – ADA developer fixes using WCAG 2.2 guidelines<br />
-        – Up to $10,000 in eligible legal or remediation costs</p>
+        – Access to a team of professionals to protect your business from legal action</p>
       </div>
 
       <a href="https://calendly.com/legalfooter-support/30min" style="display: block; width: 100%; text-align: center; background-color: #005bbd; color: white; padding: 14px 20px; text-decoration: none; font-weight: bold; border-radius: 5px; margin: 25px 0;">Submit Demand Letter</a>

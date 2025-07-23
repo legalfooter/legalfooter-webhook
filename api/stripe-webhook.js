@@ -63,15 +63,15 @@ export default async function handler(req, res) {
         const emailResponse = await resend.emails.send({
           from: 'LegalFooter <donotreply@legalfooter.com>',
           to: [email],
-          subject: '🔒 Your website is protected with a LegalFooter.',
+          subject: '🔒 Your LegalFooter Coverage Is Active.',
 html: `
   <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 30px 0;">
     <div style="max-width: 600px; margin: auto; background: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
       <img src="https://framerusercontent.com/images/MHBbgdrBWWQlb1fEzcwul4yrk.png" alt="LegalFooter Logo" style="max-width: 150px; display: block; margin: 0 0 20px 0;" />
 
-      <h1 style="color: #005bbd; text-align: left;">Your LegalFooter Support is Active.</h1>
+      <h1 style="color: #005bbd; text-align: left;">Your LegalFooter Coverage is Active.</h1>
       
-      <p style="font-size: 16px; color: #333; text-align: left;">Your LegalFooter ADA Website Support Plan™ is now active.</p>
+      <p style="font-size: 16px; color: #333; text-align: left;">Your LegalFooter™ digital ADA coverage is now active.</p>
 
       <div style="font-size: 15px; color: #333; margin: 20px 0;">
         <p><strong>Plan ID:</strong> ${uuid}</p>
